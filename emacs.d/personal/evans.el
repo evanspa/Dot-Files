@@ -58,13 +58,13 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; (Paul edit --- swank-js integration)
-(add-to-list 'load-path "~/.emacs.d/vendor/slime/")
-(add-to-list 'load-path "~/.emacs.d/vendor/slime/contrib/")
-(require 'slime)
-(require 'slime-js)
-(slime-setup '(slime-js slime-repl))
-(setq slime-js-swank-command "/usr/local/bin/swank-js")
-(setq slime-js-swank-args '())
+;(add-to-list 'load-path "~/.emacs.d/vendor/slime/")
+;(add-to-list 'load-path "~/.emacs.d/vendor/slime/contrib/")
+;(require 'slime)
+;(require 'slime-js)
+;(slime-setup '(slime-js slime-repl))
+;(setq slime-js-swank-command "/usr/local/bin/swank-js")
+;(setq slime-js-swank-args '())
 
 ;; Helm config
 (helm-mode 1)
