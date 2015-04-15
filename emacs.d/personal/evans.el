@@ -16,9 +16,9 @@
 (set-face-attribute 'default nil :height 90)
 
 ;; (Paul edit)
-(require 'workgroups)
-(workgroups-mode 1)
-(wg-load "~/.emacs.d/personal/workgroups")
+;(require 'workgroups)
+;(workgroups-mode 1)
+;(wg-load "~/.emacs.d/personal/workgroups")
 
 ;; (Paul edit)
 ;; The following code is from: http://dse.livejournal.com/67732.html
