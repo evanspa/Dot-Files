@@ -1,3 +1,7 @@
+;; https://raw.githubusercontent.com/magit/magit/next/Documentation/RelNotes/1.4.0.txt
+(setq magit-auto-revert-mode nil)
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 (require 'icomplete)
 (require 'rainbow-delimiters)
 ;; Have emacs start in full screen mode / maximized.
