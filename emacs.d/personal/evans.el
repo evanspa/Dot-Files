@@ -120,7 +120,6 @@
 ;; (Paul edit)
 (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 
-;;; Theme stuff
 ;;;(disable-theme 'zenburn)
 ;;;(load-theme 'manoj-dark t)
 
@@ -146,3 +145,19 @@
 
 ;; Configure the_silver_search (ag)
 (setq ag-highlight-search t)
+
+;; as per https://github.com/r0man/sqlingvo
+(add-hook
+ 'clojure-mode-hook
+ (lambda ()
+   (define-clojure-indent
+     (copy 2)
+     (create-table 1)
+     (delete 1)
+     (drop-materialized-view 2)
+     (drop-table 1)
+     (insert 2)
+     (refresh-materialized-view 2)
+     (select 1)
+     (truncate 1)
+     (update 2))))
