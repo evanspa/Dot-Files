@@ -1,3 +1,27 @@
+; Python!
+(setq py-python-command "python3")
+(setq python-shell-interpreter "python3")
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq py-python-command "python3")
+            (setq py-default-interpreter "python3")))
+
+; enable auto complete mode at startup
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+; https://truongtx.me/2014/04/20/emacs-javascript-completion-and-refactoring/
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
+
+;; https://truongtx.me/2014/02/21/emacs-setup-jshint-for-on-the-fly-petential-error-checking/
+(require 'flycheck)
+(add-hook 'js-mode-hook
+          (lambda () (flycheck-mode t)))
+
 ;; https://raw.githubusercontent.com/magit/magit/next/Documentation/RelNotes/1.4.0.txt
 (setq magit-auto-revert-mode nil)
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -55,11 +79,11 @@
 (add-to-list 'auto-mode-alist '("\\.xsd\\'" . xml-mode))
 
 ;; (Paul edit - org related config)
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+;(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+;(global-set-key "\C-cl" 'org-store-link)
+;(global-set-key "\C-cc" 'org-capture)
+;(global-set-key "\C-ca" 'org-agenda)
+;(global-set-key "\C-cb" 'org-iswitchb)
 
 ;; (Paul edit --- swank-js integration)
 ;(add-to-list 'load-path "~/.emacs.d/vendor/slime/")
@@ -72,7 +96,9 @@
 
 ;; Helm config
 (helm-mode 1)
-(global-set-key (kbd "C-x c f") 'helm-mini)
+(global-set-key (kbd "M-x") 'helm-M-x);
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
 
 ;; whitespace cleanup
 (global-set-key (kbd "C-x w h") 'whitespace-cleanup)
