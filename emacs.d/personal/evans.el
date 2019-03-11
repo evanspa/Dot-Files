@@ -123,13 +123,15 @@
 ;; Clojure
 (setq cider-repl-use-clojure-font-lock t)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook 'smartparens-strict-mode)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+;(add-hook 'clojure-mode-hook 'smartparens-strict-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'cider-mode-hook 'eldoc-mode)
 (setq nrepl-log-messages t)
 (add-hook 'cider-repl-mode-hook 'company-mode)
 (add-hook 'cider-mode-hook 'company-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
-(add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
+;(add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 ;;; Mac cmd key for meta
