@@ -1,12 +1,22 @@
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook #'paredit-mode)
-(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-mode)
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-hook 'prog-mode-hook 'rainbow-mode)
+
+;; https://emacs.stackexchange.com/a/44690
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;; https://emacs.stackexchange.com/questions/60560/error-retrieving-https-elpa-gnu-org-packages-archive-contents-error-http-400
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
+(toggle-frame-maximized)
 
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 (global-set-key (kbd "C-M-g") 'dumb-jump-go)
-(define-key smartparens-mode-map (kbd "C-M-b") nil) ; https://emacs.stackexchange.com/a/353
 (global-set-key (kbd "C-M-b") 'dumb-jump-back)
 
 ;; cycle windows in reverse order
