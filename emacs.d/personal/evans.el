@@ -34,9 +34,10 @@
 ;; (helm-mode 1)
 
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
-(global-set-key (kbd "C-M-g") 'dumb-jump-go)
-(define-key smartparens-mode-map (kbd "C-M-b") nil) ; https://emacs.stackexchange.com/a/353
-(global-set-key (kbd "C-M-b") 'dumb-jump-back)
+;(setq xref-show-definitions-function #'xref-show-definitions-completing-read)
+;(global-set-key (kbd "C-M-g") 'xref-find-definitions)
+;(define-key smartparens-mode-map (kbd "C-M-b") nil) ; https://emacs.stackexchange.com/a/353
+;(global-set-key (kbd "C-M-b") 'xref-pop-marker-stack)
 
 ;; cycle windows in reverse order
 (defun prev-window ()
