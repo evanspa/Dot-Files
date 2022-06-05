@@ -1,7 +1,7 @@
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(package-initialize)
+;;(require 'package)
+;;(add-to-list 'package-archives
+             ;;'("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;;(package-initialize)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook #'paredit-mode)
@@ -60,5 +60,3 @@
 (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
 
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
-
-(load-theme 'zenburn t)

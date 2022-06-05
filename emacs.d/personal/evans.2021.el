@@ -42,9 +42,12 @@
   (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory "~/Google Drive/My Drive/OrgRoamNotes")
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-         ("C-c n f" . org-roam-node-find)
-         ("C-c n i" . org-roam-node-insert))
+  (org-roam-completion-everywhere t)
+  :bind (("C-c m l" . org-roam-buffer-toggle)
+         ("C-c m f" . org-roam-node-find)
+         ("C-c m i" . org-roam-node-insert)
+         :map org-mode-map
+         ("C-M-i" . completion-at-point))
   :config
   (org-roam-setup))
 
